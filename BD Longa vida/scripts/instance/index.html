@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Planos</title>
+</head>
+<body>
+    <h1>Cadastro de Planos</h1>
+    <form method="POST">
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" required>
+        <br>
+        <label for="valor">Valor:</label>
+        <input type="number" name="valor" required>
+        <br>
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <h2>Planos Cadastrados</h2>
+    <ul>
+        {% for plano in planos %}
+        <li>{{ plano.descricao }} - R$ {{ plano.valor }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
